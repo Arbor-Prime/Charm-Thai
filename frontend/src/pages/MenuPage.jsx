@@ -275,23 +275,38 @@ function SpiceLevel({ level = 0 }) {
 }
 
 function MenuItem({ item }) {
+  const imgSrc = item.img || IMG[item.code];
   return (
-    <div className="flex justify-between items-start gap-4 border-b border-[#262626] pb-5 hover:border-[#C9A96E]/30 transition-colors group" data-testid={`menu-item-${item.code}`}>
-      <div className="flex-1 min-w-0">
-        <div className="flex flex-wrap items-center gap-2 mb-1">
-          <h4 className="font-playfair text-[#F5F0E8] font-bold text-base group-hover:text-[#C9A96E] transition-colors">{item.name}</h4>
-          {item.thai && <span className="text-[#C9A96E]/50 text-sm">{item.thai}</span>}
-          <SpiceLevel level={item.spice} />
-          {(item.tags || []).map(tag => {
-            const s = TAG_STYLES[tag];
-            return s ? (
-              <span key={tag} className={`text-[9px] px-1.5 py-0.5 font-bold tracking-wide ${s.bg} ${s.text}`} title={s.title}>{s.label}</span>
-            ) : null;
-          })}
+    <div className="flex gap-3 border-b border-[#262626] pb-5 hover:border-[#C9A96E]/30 transition-colors group" data-testid={`menu-item-${item.code}`}>
+      {imgSrc && (
+        <div className="w-[76px] h-[76px] shrink-0 overflow-hidden mt-0.5">
+          <img
+            src={imgSrc}
+            alt={item.name}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            loading="lazy"
+          />
         </div>
-        <p className="text-[#F5F0E8]/50 text-sm leading-relaxed">{item.desc}</p>
+      )}
+      <div className="flex-1 min-w-0">
+        <div className="flex justify-between items-start gap-2">
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-wrap items-center gap-1.5 mb-1">
+              <h4 className="font-playfair text-[#F5F0E8] font-bold text-base group-hover:text-[#C9A96E] transition-colors leading-tight">{item.name}</h4>
+              {item.thai && <span className="text-[#C9A96E]/50 text-sm">{item.thai}</span>}
+              <SpiceLevel level={item.spice} />
+              {(item.tags || []).map(tag => {
+                const s = TAG_STYLES[tag];
+                return s ? (
+                  <span key={tag} className={`text-[9px] px-1.5 py-0.5 font-bold tracking-wide ${s.bg} ${s.text}`} title={s.title}>{s.label}</span>
+                ) : null;
+              })}
+            </div>
+            <p className="text-[#F5F0E8]/50 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+          <span className="text-[#C9A96E] font-bold text-base shrink-0 mt-0.5">{item.price}</span>
+        </div>
       </div>
-      <span className="text-[#C9A96E] font-bold text-base shrink-0 mt-0.5">{item.price}</span>
     </div>
   );
 }
