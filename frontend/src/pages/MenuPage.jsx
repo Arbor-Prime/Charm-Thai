@@ -275,25 +275,100 @@ function SpiceLevel({ level = 0 }) {
   return <span className="text-xs ml-1" title={`Spice level ${level}`}>{chillies[level - 1] || ""}</span>;
 }
 
-function MenuItem({ item }) {
+function ItemModal({ item, imgSrc, onClose }) {
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      onClick={onClose}
+      data-testid="item-modal-overlay"
+    >
+      <div className="absolute inset-0 bg-[#0A0A0A]/90 backdrop-blur-sm" />
+      <div
+        className="relative z-10 bg-[#111111] border border-[#C9A96E]/25 max-w-lg w-full overflow-hidden shadow-2xl"
+        onClick={e => e.stopPropagation()}
+        data-testid="item-modal"
+      >
+        {/* Image */}
+        {imgSrc && (
+          <div className="relative h-64 overflow-hidden">
+            <img src={imgSrc} alt={item.name} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />
+          </div>
+        )}
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 w-9 h-9 bg-[#0A0A0A]/80 border border-[#C9A96E]/30 flex items-center justify-center text-[#C9A96E] hover:bg-[#C9A96E] hover:text-[#0A0A0A] transition-colors z-20"
+          data-testid="item-modal-close"
+          aria-label="Close"
+        >
+          <X size={16} />
+        </button>
+        {/* Content */}
+        <div className="p-6">
+          <div className="flex justify-between items-start gap-4 mb-3">
+            <div>
+              <h3 className="font-playfair text-[#F5F0E8] text-2xl font-bold leading-tight">{item.name}</h3>
+              {item.thai && <p className="text-[#C9A96E]/70 text-base font-script mt-0.5">{item.thai}</p>}
+            </div>
+            <span className="text-[#C9A96E] font-bold text-2xl shrink-0">{item.price}</span>
+          </div>
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            <SpiceLevel level={item.spice} />
+            {(item.tags || []).map(tag => {
+              const s = TAG_STYLES[tag];
+              return s ? (
+                <span key={tag} className={`text-[10px] px-2 py-1 font-bold tracking-wide ${s.bg} ${s.text}`} title={s.title}>{s.label}</span>
+              ) : null;
+            })}
+          </div>
+          <p className="text-[#F5F0E8]/70 text-sm leading-relaxed">{item.desc}</p>
+          <div className="mt-6">
+            <a
+              href="https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=charm-thai-menu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold text-xs py-3 w-full block text-center"
+              data-testid="modal-order-btn"
+            >
+              Order Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MenuItem({ item, onSelect }) {
   const imgSrc = item.img || IMG[item.code];
   return (
     <div className="flex gap-3 border-b border-[#262626] pb-5 hover:border-[#C9A96E]/30 transition-colors group" data-testid={`menu-item-${item.code}`}>
       {imgSrc && (
-        <div className="w-[76px] h-[76px] shrink-0 overflow-hidden mt-0.5">
+        <button
+          onClick={() => onSelect(item)}
+          className="w-[76px] h-[76px] shrink-0 overflow-hidden mt-0.5 cursor-pointer focus:outline-none focus:ring-1 focus:ring-[#C9A96E]"
+          aria-label={`View ${item.name} details`}
+          data-testid={`menu-item-img-${item.code}`}
+        >
           <img
             src={imgSrc}
             alt={item.name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             loading="lazy"
           />
-        </div>
+        </button>
       )}
       <div className="flex-1 min-w-0">
         <div className="flex justify-between items-start gap-2">
           <div className="flex-1 min-w-0">
             <div className="flex flex-wrap items-center gap-1.5 mb-1">
-              <h4 className="font-playfair text-[#F5F0E8] font-bold text-base group-hover:text-[#C9A96E] transition-colors leading-tight">{item.name}</h4>
+              <h4
+                className="font-playfair text-[#F5F0E8] font-bold text-base group-hover:text-[#C9A96E] transition-colors leading-tight cursor-pointer"
+                onClick={() => onSelect(item)}
+              >
+                {item.name}
+              </h4>
               {item.thai && <span className="text-[#C9A96E]/50 text-sm">{item.thai}</span>}
               <SpiceLevel level={item.spice} />
               {(item.tags || []).map(tag => {
