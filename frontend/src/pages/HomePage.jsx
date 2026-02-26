@@ -131,6 +131,50 @@ export default function HomePage() {
         </button>
       </section>
 
+      {/* ===== ORDER STRIP ===== */}
+      <section className="py-20 bg-[#111111] border-b border-[#C9A96E]/15" data-testid="order-section">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 text-center">
+          <RevealSection>
+            <h2 className="font-playfair text-3xl md:text-4xl font-bold text-[#F5F0E8] uppercase tracking-widest mb-3">
+              Order for Delivery or <span className="text-[#C9A96E]">Collection</span>
+            </h2>
+            <p className="text-[#F5F0E8]/50 text-sm mb-12 tracking-wider">Free delivery within 2 miles · Available within 3 miles (£20 minimum)</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <div className="card-gold-border p-8 text-center hover:border-[#C9A96E]/40 transition-colors group">
+                <div className="text-[#C9A96E] text-4xl mb-4 group-hover:scale-110 transition-transform">🍜</div>
+                <h3 className="font-playfair text-lg font-bold text-[#F5F0E8] uppercase tracking-wider mb-3">Order Direct</h3>
+                <p className="text-[#F5F0E8]/50 text-sm mb-6">Order directly from us for collection or delivery</p>
+                <a href={ORDER_URL} target="_blank" rel="noopener noreferrer" className="btn-gold text-xs py-3 w-full block text-center" data-testid="order-direct-btn">
+                  Order Now
+                </a>
+              </div>
+              <div className="card-gold-border p-8 text-center hover:border-[#C9A96E]/40 transition-colors group">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
+                  <svg className="w-10 h-10 mx-auto" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="4" fill="#000"/>
+                    <text x="3" y="17" fontSize="11" fill="#06C167" fontWeight="bold" fontFamily="Arial">Uber</text>
+                    <text x="3" y="22" fontSize="7" fill="#06C167" fontFamily="Arial">Eats</text>
+                  </svg>
+                </div>
+                <h3 className="font-playfair text-lg font-bold text-[#F5F0E8] uppercase tracking-wider mb-3">Uber Eats</h3>
+                <p className="text-[#F5F0E8]/50 text-sm mb-6">Order via Uber Eats for fast home delivery</p>
+                <a href={UBEREATS_URL} target="_blank" rel="noopener noreferrer" className="btn-outline-gold text-xs py-3 w-full block text-center" data-testid="order-ubereats-btn">
+                  Open Uber Eats
+                </a>
+              </div>
+              <div className="card-gold-border p-8 text-center hover:border-[#C9A96E]/40 transition-colors group">
+                <div className="text-[#C9A96E] text-4xl mb-4 group-hover:scale-110 transition-transform">📞</div>
+                <h3 className="font-playfair text-lg font-bold text-[#F5F0E8] uppercase tracking-wider mb-3">Call to Order</h3>
+                <p className="text-[#F5F0E8]/50 text-sm mb-6">Call us to place your order or reservation</p>
+                <a href="tel:01225481001" className="btn-outline-gold text-xs py-3 w-full block text-center" data-testid="order-call-btn">
+                  01225 481001
+                </a>
+              </div>
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
       {/* ===== ABOUT / WELCOME ===== */}
       <section ref={scrollRef} className="py-24 md:py-32 bg-[#0A0A0A]" data-testid="about-section">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
