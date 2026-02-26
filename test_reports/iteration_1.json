@@ -1,0 +1,69 @@
+{
+  "summary": "Full e2e testing of Charm Thai Restaurant website. All backend API tests pass (5/5). Frontend pages load correctly with proper design. Contact form submission works. Video modal opens. Gallery lightbox works. Mobile sticky bar present.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "PrivateDiningPage - select dropdown",
+        "issue": "HTML hydration warning: <span> cannot be child of <select>/<option>. This is a React hydration error in the party size select field. Console logs show 'In HTML, <span> cannot be a child of <select>'.",
+        "selector": "[data-testid='pd-party-select']",
+        "priority": "LOW"
+      },
+      {
+        "component": "WhatsOn video modal",
+        "issue": "Video from Wix CDN shows loading spinner (not playing) - expected behavior per spec since Wix may block external hotlinking",
+        "selector": "div[class*='cursor-pointer']",
+        "priority": "LOW - known issue per spec"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "Mobile",
+        "issues": ["Mobile sticky bar shows CALL and ORDER buttons - ORDER button may be cut off by Emergent badge overlay in preview"]
+      }
+    ]
+  },
+  "test_report_links": [
+    "/app/backend/tests/test_charm_thai.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [
+    "Fix React hydration warning: <span> inside <select>/<option> in PrivateDiningPage party size dropdown - remove any span wrapper inside option elements"
+  ],
+  "critical_code_review_comments": [
+    "PrivateDiningPage: select dropdown with option elements appears to have span children causing React hydration warning - check the partySize select rendering",
+    "server.py is clean and well-structured - all _id fields excluded from MongoDB responses"
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_charm_thai.py"
+  ],
+  "success_rate": {
+    "backend": "100% (5/5 tests passing)",
+    "frontend": "95% - all pages load, forms work, navigation works, minor hydration warning"
+  },
+  "seed_data_creation": "Created TEST_ prefixed enquiries via API tests",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "All major features work. Backend /api/enquiry POST and GET work. Contact and Private Dining forms submit successfully. Menu tabs functional (11 tabs). What's On video modal opens with HTML5 player. Gallery lightbox works. Mobile sticky bar with CALL/ORDER present. Minor issue: React hydration warning in PrivateDiningPage select dropdown.",
+  "passed_tests": [
+    "Home page loads with hero image, ORDER NOW and BOOK A TABLE CTAs",
+    "All nav links work (Home, Menu, Private Dining, What's On, Gallery, Contact)",
+    "Menu page tabs: Starters, Noodles, Fried Rice, Stir Fry, Curry, Fish, Vegetarian, Soup, Chef's Special, Kids Menu, Extras & Drinks",
+    "Contact form submits to /api/enquiry with success message",
+    "What's On 3 video cards load with CLICK TO PLAY",
+    "Video modal opens with HTML5 player",
+    "Gallery loads with filter buttons (All, Food, Interior, Team) and lightbox",
+    "Privacy, Terms, Cookie pages load",
+    "ORDER NOW links to foodbooking.com",
+    "BOOK A TABLE links to /contact",
+    "Phone number 01225 481001 shown and clickable",
+    "Mobile sticky bar with CALL and ORDER buttons",
+    "Backend /api/enquiry POST - 200 OK",
+    "Backend /api/enquiries GET - 200 OK",
+    "Backend validation - 422 for missing required fields"
+  ]
+}
