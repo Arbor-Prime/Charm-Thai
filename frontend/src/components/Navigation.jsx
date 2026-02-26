@@ -32,8 +32,8 @@ export default function Navigation() {
       <nav
         data-testid="navigation"
         className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#C9A96E]/10 py-3"
+          scrolled || menuOpen
+            ? "bg-[#0A0A0A] border-b border-[#C9A96E]/10 py-3"
             : "bg-transparent py-5"
         }`}
       >
