@@ -454,7 +454,7 @@ export default function MenuPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0">
               {activeCategory.items.map((item, i) => (
                 <div key={`${item.code}-${i}`} className="py-5">
-                  <MenuItem item={item} />
+                  <MenuItem item={item} onSelect={setSelectedItem} />
                 </div>
               ))}
             </div>
