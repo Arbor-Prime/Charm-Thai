@@ -5,7 +5,7 @@ Premium multi-page website for **Charm Thai Restaurant**, Bath, UK. Award-winnin
 
 **Created:** January 2026  
 **Stack:** React + FastAPI + MongoDB + Tailwind CSS  
-**URL:** https://charm-dining.preview.emergentagent.com
+**URL:** https://charm-thai-menu.preview.emergentagent.com
 
 ---
 
@@ -46,7 +46,7 @@ Premium multi-page website for **Charm Thai Restaurant**, Bath, UK. Award-winnin
 ---
 
 ## Key External Links
-- Order Online: `https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=bd69fcc6-b338-4885-b7ed-a9392f1fe277`
+- Order Online: `https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=charm-thai-menu`
 - Uber Eats: `https://www.ubereats.com/gb/store/charm-thai/oD4ILZtRQ8aa7e-WKP6emQ`
 - Instagram: `https://www.instagram.com/charmthaiuk/`
 - Facebook: `https://www.facebook.com/charmthaiuk/`

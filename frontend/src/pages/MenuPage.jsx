@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ORDER_URL = "https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=bd69fcc6-b338-4885-b7ed-a9392f1fe277";
+const ORDER_URL = "https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=charm-thai-menu";
 const WIXBASE = "https://static.wixstatic.com/media";
 
 // ===== FULL MENU DATA =====

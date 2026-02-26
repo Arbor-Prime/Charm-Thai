@@ -42,7 +42,7 @@ function App() {
             Call
           </a>
           <a
-            href="https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=bd69fcc6-b338-4885-b7ed-a9392f1fe277"
+            href="https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=charm-thai-menu"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 bg-gold-primary text-black flex items-center justify-center gap-2 py-4 font-bold text-sm tracking-widest uppercase"

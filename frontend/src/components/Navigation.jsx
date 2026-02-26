@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const ORDER_URL = "https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=bd69fcc6-b338-4885-b7ed-a9392f1fe277";
+const ORDER_URL = "https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=charm-thai-menu";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);

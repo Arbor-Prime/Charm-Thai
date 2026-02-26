@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const ORDER_URL = "https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=bd69fcc6-b338-4885-b7ed-a9392f1fe277";
+const ORDER_URL = "https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=charm-thai-menu";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", date: "", partySize: "", message: "" });

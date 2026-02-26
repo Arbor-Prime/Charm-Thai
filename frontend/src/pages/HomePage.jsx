@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Star, MapPin, Phone, ChevronDown, Award } from "lucide-react";
 
-const ORDER_URL = "https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=bd69fcc6-b338-4885-b7ed-a9392f1fe277";
+const ORDER_URL = "https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=charm-thai-menu";
 const UBEREATS_URL = "https://www.ubereats.com/gb/store/charm-thai/oD4ILZtRQ8aa7e-WKP6emQ";
 
 // Food images from Wix CDN
