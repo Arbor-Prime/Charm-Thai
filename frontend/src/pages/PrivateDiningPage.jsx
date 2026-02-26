@@ -189,7 +189,10 @@ export default function PrivateDiningPage() {
                     data-testid="pd-party-select"
                   >
                     <option value="">Select party size</option>
-                    {["10-15", "16-20", "21-25", "26-30"].map(s => <option key={s} value={s}>{s} guests</option>)}
+                      <option value="10-15">10-15 guests</option>
+                    <option value="16-20">16-20 guests</option>
+                    <option value="21-25">21-25 guests</option>
+                    <option value="26-30">26-30 guests</option>
                   </select>
                 </div>
                 <div>
