@@ -161,7 +161,7 @@ const MENU_CATEGORIES = [
       { code: "22", name: "Green Curry Belly Pork", thai: "แกงเขียวหวานหมูกรอบ", desc: "Crispy Belly Pork with green curry paste, coconut milk, red and green pepper, bamboo shoot strip, onions and basil leaves", price: "£16.95", tags: ["GF"], spice: 2 },
       { code: "23", name: "Red Curry Belly Pork", thai: "แกงแดงหมูกรอบ", desc: "Crispy Belly Pork with red curry paste, coconut milk, red and green pepper, bamboo shoot strip, onions and basil leaves", price: "£16.95", tags: ["GF"], spice: 2 },
       { code: "25", name: "Khao Rad", thai: "ข้าวราด", desc: "Choice of Pork Belly or Roasted Duck. Topped with traditional Thai homemade gravy sauce and bean paste; served with cucumber, spring green, coriander, half boiled egg and dark soya dip with fresh chilli", price: "£17.95", tags: ["S"] },
-      { code: "27", name: "Sweet & Sour", thai: "ผัดเปรี้ยวหวาน", desc: "Choice of Chicken or Prawn. Stir fried with sweet and sour sauce, onions, cucumber, pineapple, baby corn, carrot and tomato", price: "£15.95" },
+      { code: "27", name: "Sweet & Sour", thai: "ผัดเปรี้ยวหวาน", desc: "Choice of Chicken or Prawn. Stir fried with sweet and sour sauce, onions, cucumber, pineapple, baby corn, carrot and tomato", price: "£15.95", img: IMG["27_sweet"] },
     ]
   },
   {
