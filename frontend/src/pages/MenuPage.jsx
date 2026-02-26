@@ -482,6 +482,15 @@ export default function MenuPage() {
           Free delivery within 2 miles · Min. £20 for delivery within 3 miles
         </p>
       </div>
+
+      {/* Item Detail Modal */}
+      {selectedItem && (
+        <ItemModal
+          item={selectedItem}
+          imgSrc={selectedImgSrc}
+          onClose={() => setSelectedItem(null)}
+        />
+      )}
     </div>
   );
 }
