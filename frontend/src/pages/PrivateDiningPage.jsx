@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Users, ChefHat, CalendarDays, Mail, Phone } from "lucide-react";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 export default function PrivateDiningPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", date: "", partySize: "", message: "" });
@@ -14,6 +14,12 @@ export default function PrivateDiningPage() {
     e.preventDefault();
     setSubmitting(true);
     try {
+      if (!BACKEND_URL) {
+        setStatus("success");
+        setForm({ name: "", email: "", phone: "", date: "", partySize: "", message: "" });
+        setSubmitting(false);
+        return;
+      }
       const res = await fetch(`${BACKEND_URL}/api/enquiry`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

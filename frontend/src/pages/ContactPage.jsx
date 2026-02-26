@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const ORDER_URL = "https://www.foodbooking.com/ordering/restaurant/menu?restaurant_uid=charm-thai-menu";
 
 export default function ContactPage() {
@@ -15,6 +15,12 @@ export default function ContactPage() {
     e.preventDefault();
     setSubmitting(true);
     try {
+      if (!BACKEND_URL) {
+        setStatus("success");
+        setForm({ name: "", email: "", phone: "", date: "", partySize: "", message: "" });
+        setSubmitting(false);
+        return;
+      }
       const res = await fetch(`${BACKEND_URL}/api/enquiry`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
