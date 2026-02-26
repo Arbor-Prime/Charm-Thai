@@ -94,8 +94,8 @@ Premium multi-page website for **Charm Thai Restaurant**, Bath, UK. Award-winnin
 ### P1 (Important Enhancements)
 - Add email notification on new enquiry (Resend/SendGrid integration)
 - TripAdvisor reviews widget embed
-- Real menu item food photos (currently some share images)
 - Google Reviews widget integration
+- Add VAT-inclusive prices on menu (current prices are likely pre-VAT)
 
 ### P2 (Nice to Have)
 - Online table booking widget (OpenTable/ResDiary)
