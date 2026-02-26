@@ -81,6 +81,8 @@ Premium multi-page website for **Charm Thai Restaurant**, Bath, UK. Award-winnin
 - [2026-01] Privacy Policy, T&Cs, Cookie Policy pages
 - [2026-01] Legal pages (Privacy, T&Cs, Cookies)
 - [2026-01] Backend /api/enquiry endpoint with MongoDB
+- [2026-02] Food item images scraped from foodbooking.com CDN (fbgcdn.com), 104 images mapped to menu items by code — displayed as thumbnails in menu
+- [2026-02] "Order for Delivery or Collection" section moved to directly below Hero section on homepage
 
 ---
 
