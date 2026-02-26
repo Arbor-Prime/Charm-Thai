@@ -114,9 +114,16 @@ export default function HomePage() {
               Book a Table
             </Link>
           </div>
-          <div className="mt-4 animate-fade-in" style={{ animationDelay: "0.7s" }}>
-            <Link to="/menu" className="text-[#F5F0E8]/50 text-xs tracking-widest uppercase hover:text-[#C9A96E] transition-colors underline underline-offset-4" data-testid="hero-menu-btn">
+          <div className="mt-6 animate-fade-in" style={{ animationDelay: "0.7s" }}>
+            <Link
+              to="/menu"
+              className="inline-flex items-center gap-2 text-[#C9A96E] text-sm font-bold tracking-[0.2em] uppercase hover:text-[#E8D5A3] transition-colors border-b border-[#C9A96E]/50 hover:border-[#E8D5A3] pb-0.5"
+              data-testid="hero-menu-btn"
+            >
               View Full Menu
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           </div>
         </div>
