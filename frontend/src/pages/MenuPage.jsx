@@ -389,8 +389,10 @@ function MenuItem({ item, onSelect }) {
 
 export default function MenuPage() {
   const [activeTab, setActiveTab] = useState("starters");
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const activeCategory = MENU_CATEGORIES.find(c => c.id === activeTab);
+  const selectedImgSrc = selectedItem ? (selectedItem.img || IMG[selectedItem.code]) : null;
 
   return (
     <div className="bg-[#0A0A0A] min-h-screen">
